@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 1</title>
+</head>
+
+<body>
+    <input type="button" value="show date" onclick="showdate()"><br>
+    <div id="newnode1"></div><br>
+    <input type="button" value="show time" onclick="showtime()"><br>
+    <div id="newnode2"></div><br><br>
+    <script>
+        function showdate() {
+            var h3 = document.createElement("h3");
+            var currentDate = new Date();
+            var day = currentDate.getDate();
+            var month = currentDate.toLocaleString('default', { month: 'long' });
+            var year = currentDate.getFullYear();
+            var formattedDate = day + '/' + month + '/' + year;
+            var nnode = document.createTextNode(formattedDate);
+            h3.appendChild(nnode);
+            var ele = document.getElementById("newnode1");
+            ele.innerHTML = "<h3>" + h3.innerText + "</h3>";
+        }
+        function showtime() {
+            var h3 = document.createElement("h3");
+            var date = new Date();
+            var nnode = document.createTextNode(date);
+            h3.appendChild(nnode);
+            var ele = document.getElementById("newnode2");
+            ele.innerHTML = "<h3>" + h3.innerText + "</h3>";
+        }
+    </script>
+</body>
+
+</html>

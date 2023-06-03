@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 9</title>
+    <style>
+        .outside-container {
+            background-color: #a22a57;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 45%;
+            padding: 25px 30px
+        }
+
+        .inside-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #752041;
+            padding: 10px 10px;
+        }
+
+        label {
+            color: white;
+            font-size: 20px;
+        }
+
+        table {
+            border-spacing: 10px;
+        }
+
+        textarea::placeholder {
+            font-size: 10px;
+        }
+
+        button {
+            width: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outside-container">
+        <div class="inside-container">
+            <form action="#" method="post" onsubmit="return validateForm()">
+                <table>
+                    <tr>
+                        <td><label>Name:</label></td>
+                        <td><input type="text" placeholder="your name" id="name"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Email:</label></td>
+                        <td><input type="text" placeholder="your email" id="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Password:</label></td>
+                        <td><input type="password" id="pwd"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Phone Number:</label></td>
+                        <td><input type="number" id="phone"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Gender:</label></td>
+                        <td><input type="radio" name="gender" id="gender" value="Male"><label>Male</label><input
+                                type="radio" name="gender" id="gender: value=" Female" /> <label>Female</label><input
+                                type="radio" name="gender" value="Other" id="gender"><label>Other</label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Language:</label></td>
+                        <td>
+                            <select id="lang">
+                                <option value="">Select language</option>
+                                <option value="English">English</option>
+                                <option value="Hindi">Hindi</option>
+                                <option value="Tamil">Tamil</option>
+                                <option value="Telugu">Telugu</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Zip code:</label></td>
+                        <td> <input type="number" id="zip"></td>
+                    </tr>
+                    <tr>
+                        <td><label>About:</label></td>
+                        <td><textarea cols="20" rows="2" placeholder="Write about yourself...." id="about"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Register" style="color:black;font-weight: bold;">
+                            </input>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value
+            var email = document.getElementById("email").value;
+            var pwd = document.getElementById("pwd").value;
+            var phone = document.getElementById("phone").value;
+            var gender = document.getElementById("gender").checked;
+            var lang = document.getElementById("lang").value;
+            var zipcode = document.getElementById("zip").value;
+            var about = document.getElementById("about").value;
+
+            if (name == null || name == "") {
+                alert("Please enter ur name..")
+                return false;
+            }
+
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (!email.match(validRegex)) {
+                alert("Please enter valid email id..");
+                return false;
+            }
+
+            if (pwd.length < 6) {
+                alert("Password length should be atleast 6 characters..");
+                return false;
+            }
+
+            if (isNaN(phone) || phone.length < 10) {
+                alert("Please enter valid phone number..")
+                return false;
+            }
+
+            if (!gender) {
+                alert("Please select ur gender..");
+                return false;
+            }
+
+            if (lang == "") {
+                alert("Please select ur language..");
+                return false;
+            }
+
+            if (zipcode.length < 6) {
+                alert("Please enter valid zipcode..");
+                return false;
+            }
+
+            if (about == null || about == "") {
+                alert("Please enter something about u..");
+                return false;
+            }
+            alert("Form Submitted Successfully");
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>

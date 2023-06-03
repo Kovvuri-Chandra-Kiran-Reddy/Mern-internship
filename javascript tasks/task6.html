@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Task 6</title>
+</head>
+
+<body>
+    Enter string to sort : <input type="text" id="str" placeholder="Enter number"><br />
+    <button onclick="call_fun()"> Get sorted string </button>
+    <p id="p" style="display:none"> </p>
+    <script>
+        call_fun = () => {
+            var str = document.getElementById("str").value;
+            var p = document.getElementById("p");
+            var ans = str.split('').sort().join('');
+            ans = "sorted string for " + str + " is " + ans;
+            console.log(ans);
+            p.innerText = ans;
+            p.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

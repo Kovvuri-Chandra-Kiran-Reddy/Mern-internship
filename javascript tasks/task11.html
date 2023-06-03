@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 11</title>
+    <style>
+        table {
+            border-spacing: 10px;
+        }
+
+        .abcd {
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rf {
+            color: #0803bf;
+            font-size: 20px;
+            font-weight: bold;
+            margin: auto;
+            align-items: center;
+        }
+
+        label {
+            font-weight: bold;
+
+        }
+
+        tr>label {
+            text-align: right;
+        }
+
+        .container {
+            width: fit-content;
+            padding: 10px 20px;
+            background: linear-gradient(#f7e8b5, #d277bc);
+        }
+
+        input[type="submit"] {
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+
+        input[type="submit"]:hover {
+            cursor: pointer;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="tel"] {
+            width: 300px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="abcd">
+        <div class="container">
+            <form name="myForm" action="#" method="post" onsubmit="return validateForm()">
+                <table>
+                    <tr>
+                        <!-- <td></td> -->
+                        <td class="rf" align="center" colspan="3">Registration form</td>
+                    </tr>
+                    <tr>
+                        <td><label>First Name</label></td>
+                        <td><input type="text" id="fname"></td>
+                        <td id="fn_err" style="color : red"> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Last Name</label></td>
+                        <td><input type="text" id="lname"></td>
+                        <td id="ln_err" style="color : red"> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Email</label></td>
+                        <td><input type="email" id="email"></td>
+                        <td id="em_err" style="color : red"> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Password</label></td>
+                        <td><input type="password" id="pwd"></td>
+                        <td id="pwd_err" style="color : red"> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Re-enter Password</label></td>
+                        <td><input type="password" id="cpwd"></td>
+                        <td id="cpwd_err" style="color : red"> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Gender</label></td>
+                        <td><input type="radio" name="gender" id="gender" value="Male">Male<input type="radio"
+                                name="gender" value="Female" /> Female</td>
+                        <td id="gen_err" style="color : red"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Age</label></td>
+                        <td><input type="number" min="1" id="age"></td>
+                        <td id="age_err" style="color : red"> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Phone Number</label></td>
+                        <td><input type="tel" id="phone"></td>
+                        <td id="phone_err" style="color : red"> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Address</label></td>
+                        <td><textarea id="addr" cols="39" rows="4"></textarea></td>
+                        <td id="add_err" style="color : red"> </td>
+                    </tr>
+                    <tr>
+                        <td><label>State</label></td>
+                        <td> <input type="text" id="state"></td>
+                        <td id="state_err" style="color : red"> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Country</label> </td>
+                        <td>
+                            <select id="country">
+                                <option value="">Choose your country</option>
+                                <option value="India">India</option>
+                                <option value="USA">USA</option>
+                                <option value="Russia">Russia</option>
+                            </select>
+                        </td>
+                        <td id="country_err" style="color : red"> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Languages Known</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="lk" value="English"> <label>English</label>
+                            <input type="checkbox" class="lk" value="Kannada"> <label>Kannada</label>
+                            <input type="checkbox" class="lk" value="Hindi"> <label>Hindi</label>
+                            <input type="checkbox" class="lk" value="Telugu"> <label>Telugu</label>
+                        </td>
+                        <td id="lk_err" style="color : red"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="checkbox" id="agree" /> Hereby I declare all the given details are
+                            true </td>
+                        <td id="agree_err" style="color : red"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="right">Login to <a href="https://ethnus.com/" target="_blank"> ethnus</a> webiste
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="REGISTER"></input>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script>
+
+        function validateForm() {
+            var returnVal = true;
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value
+            var email = document.getElementById("email").value;
+            var pwd = document.getElementById("pwd").value;
+            var cpwd = document.getElementById("cpwd").value;
+            var gender = document.getElementById("gender").checked;
+            var age = document.getElementById("age").value;
+            var phone = document.getElementById("phone").value;
+            var addr = document.getElementById("addr").value;
+            var state = document.getElementById("state").value;
+            var country = document.getElementById("country").value;
+            var lk = document.getElementsByClassName("lk");
+            var agr = document.getElementById("agree");
+
+            if (fname == null || fname == "") {
+                document.getElementById("fn_err").innerHTML = "POOR";
+                returnVal = false;
+            }
+
+            if (lname == null || lname == "") {
+                document.getElementById("ln_err").innerHTML = "POOR";
+                returnVal = false;
+            }
+
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (!email.match(validRegex)) {
+                document.getElementById("em_err").innerHTML = "POOR";
+                returnVal = false;
+            }
+
+            if (pwd.length < 6) {
+                document.getElementById("pwd_err").innerHTML = "POOR";
+                returnVal = false;
+            }
+
+            if (cpwd.length < 6 || cpwd != pwd) {
+                document.getElementById("cpwd_err").innerHTML = "POOR OR MISMATCH";
+                returnVal = false;
+            }
+
+            if (!gender) {
+                document.getElementById("gen_err").innerHTML = "PLEASE SELECT ANY";
+                returnVal = false;
+            }
+
+            if (isNaN(age) || age.length == 0) {
+                document.getElementById("age_err").innerHTML = "POOR";
+                returnVal = false;
+            }
+
+            if (isNaN(phone) || phone.length < 10) {
+                document.getElementById("phone_err").innerHTML = "POOR";
+                returnVal = false;
+            }
+
+            if (addr == null || addr == "") {
+                document.getElementById("add_err").innerHTML = "POOR";
+                returnVal = false;
+            }
+
+            if (state == null || state == "") {
+                document.getElementById("state_err").innerHTML = "POOR";
+                returnVal = false;
+            }
+
+            if (country == "") {
+                document.getElementById("country_err").innerHTML = "PLEASE SELECT ANY";
+                returnVal = false;
+            }
+
+
+            var checked = false;
+            for (let i = 0; i < lk.length; i++) {
+                if (lk[i].checked) {
+                    checked = true;
+                }
+            }
+
+            if (!checked) {
+                document.getElementById("lk_err").innerHTML = "PLEASE SELECT ANY";
+                returnVal = false;
+            }
+
+            if (!agr.checked) {
+
+                console.log("not checked")
+                if (returnVal)
+                    document.getElementById("agree_err").innerHTML = "PLEASE CHECK";
+                returnVal = false;
+            }
+            if (returnVal) {
+                alert("Form Submitted Successfully");
+            }
+            return returnVal;
+        }
+
+    </script>
+</body>
+
+</html>

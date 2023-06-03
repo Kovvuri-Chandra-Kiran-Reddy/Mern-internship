@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Task 5</title>
+</head>
+
+<body>
+    Enter number to reverse : <input type="number" id="no" min="1" placeholder="Enter number"><br />
+    <button onclick="call_fun()"> Get Answer </button>
+    <p id="p" style="display:none"> </p>
+    <script>
+        call_fun = () => {
+            var num = document.getElementById("no").value;
+            if (isNaN(num)) {
+                alert("Please enter valid number..")
+                return;
+            }
+
+            if (num < 1) {
+                alert("Please enter number greater than 0");
+                return;
+            }
+            var temp = num;
+            var p = document.getElementById("p");
+            let reversed = 0;
+            while (temp !== 0) {
+                reversed = (reversed * 10) + (temp % 10);
+                temp = Math.floor(temp / 10);
+            }
+            var ans = "Reversed Number for number " + num + " is " + reversed;
+            console.log(ans);
+            p.innerText = ans;
+            p.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

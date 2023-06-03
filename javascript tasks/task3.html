@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> JavaScript Task 3 </title>
+    <style>
+        .outside-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 70%;
+            padding: 25px 30px
+        }
+
+        .inside-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 10px;
+        }
+
+        label {
+            color: black;
+            font-size: 20px;
+        }
+
+        table {
+            border-spacing: 10px;
+        }
+
+        textarea::placeholder {
+            font-size: 10px;
+        }
+
+        button {
+            width: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outside-container">
+        <div class="inside-container">
+            <form action="#" method="post" onsubmit="return validateForm()">
+                <table>
+                    <tr>
+                        <td><label>Name:</label></td>
+                        <td><input type="text" id="name"></td>
+                        <td id="name_err" style="color: red;"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Email:</label></td>
+                        <td><input type="text" id="email"></td>
+                        <td id="email_err" style="color: red;"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Website</label></td>
+                        <td><input type="text" id="website"></td>
+                        <td id="web_err" style="color: red;"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Message:</label></td>
+                        <td><textarea cols="20" rows="2" id="message"></textarea>
+                        </td>
+                        <td id="msg_err" style="color: red;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Submit" style="color:black;font-weight: bold;">
+                            </input>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            var returnVal = true;
+            var name = document.getElementById("name");
+            var email = document.getElementById("email");
+            var msg = document.getElementById("message");
+            var web = document.getElementById("website");
+
+            if (name.value == null || name.value == "") {
+                var n = document.getElementById("name_err");
+                n.innerText = "This field is required";
+                name.style.border = "2px solid red";
+
+                returnVal = false;
+            }
+
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (!email.value.match(validRegex)) {
+                var n = document.getElementById("email_err");
+                n.innerText = "A valid email address is required";
+                email.style.border = "2px solid red";
+                returnVal = false;
+            }
+
+            if (msg.value == null || msg.value == "") {
+                var n = document.getElementById("msg_err");
+                n.innerText = "This field is required";
+                msg.style.border = "2px solid red";
+                returnVal = false;
+            }
+
+            var xmlReq = new XMLHttpRequest();
+            xmlReq.open("get", web.value)
+            xmlReq.send();
+            console.log(xmlReq.status);
+            if (xmlReq.status != 200) {
+                web.style.border = "2px solid red";
+                document.getElementById("web_err").innerText = "A valid url is required";
+                returnVal = false;
+            }
+
+            return returnVal;
+        }
+
+    </script>
+</body>
+
+</html>

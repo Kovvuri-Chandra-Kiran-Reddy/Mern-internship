@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Task - 8</title>
+    <style>
+        #image-container>img {
+            height: 200px;
+            width: 200px;
+            margin-left: 0px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <div id="image-container">
+            <img src="./train-image.jpg" alt="" id="img" style="margin-left: 0px;" />
+        </div>
+        <br>
+        <div class="button-container">
+            <button type="submit" onclick="start()"> Start </button> &nbsp;&nbsp;
+            <button type="submit" onclick="stop()"> Stop </button>
+        </div>
+    </div>
+
+    <script>
+        var moment;
+        start = () => {
+            moment = setInterval(helper, 1);
+        }
+
+        helper = () => {
+            var windowWidth = window.innerWidth;
+            var container = document.getElementById('img');
+            var aa = container.style.marginLeft;
+            var bb = parseInt(aa.substring(0, aa.length - 2));
+            if (bb > windowWidth - 200) {
+                bb = "0px";
+                container.style.marginLeft = bb;
+            } else {
+                var temp = (bb + 1) + "px";
+                container.style.marginLeft = temp;
+            }
+        }
+        stop = () => {
+            clearTimeout(moment);
+        }
+    </script>
+</body>
+
+</html>

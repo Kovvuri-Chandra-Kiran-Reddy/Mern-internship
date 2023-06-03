@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Task 10</title>
+</head>
+<body>
+    <h1>Open Console to view JavaScript array methods</h1>
+    <script text="text/JavaScript">
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, 6];
+        var concated_arr = arr1.concat(arr2);
+        console.log("Concat method : ")
+        console.log(concated_arr);
+        console.log("copyWithin method : ")
+        const arr3 = concated_arr.copyWithin(3, 0, 3);
+        console.log(arr3);
+
+        console.log("map method : ");
+        arr3.map((ele) => {
+            console.log(ele);
+        })
+
+        console.log("every method : ");
+        var arr = [10, 20, 30, 20, 40];
+        console.log(arr.every((ele) => {
+            return ele > 20;
+        }));
+
+        console.log("arr method : ");
+        console.log(arr.some((ele) => {
+            return ele > 20;
+        }));
+
+        console.log("filter method : ");
+        console.log(arr.filter((ele) => {
+            return ele > 20;
+        }));
+
+        console.log("find method : ");
+        console.log(arr.find((ele) => {
+            return ele > 20;
+        }));
+
+        console.log("findIndex method : ");
+        console.log(arr.findIndex((ele) => {
+            return ele > 20;
+        }))
+
+        console.log("lastIndexOf method : ");
+        console.log(arr.lastIndexOf(20));
+
+        console.log("push method : ");
+        arr.push(100);
+        console.log(arr);
+
+        console.log("pop method : ");
+        arr.pop();
+        console.log(arr);
+
+        console.log("shift method : ");
+        arr.shift();
+        console.log(arr);
+
+        console.log("unshift method : ");
+        arr.unshift(200);
+        console.log(arr);
+
+
+    </script>
+</body>
+
+</html>

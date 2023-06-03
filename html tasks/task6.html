@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HTML Task 6</title>
+    <style>
+        table {
+            border-spacing: 5px;
+        }
+
+        #rf {
+            color: #0803bf;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* text-align: center; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <form>
+            <table>
+                <tr>
+                    <td id="rf">Registration form</td>
+                </tr>
+                <tr>
+                    <td><label>First Name:</label><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Last Name:</label><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Email:</label><input type="email"></td>
+                </tr>
+                <tr>
+                    <td><label>Gender:</label><input type="radio" name="gender" value="Male">Male<input type="radio"
+                            name="gender" value="Female" /> Female</td>
+                </tr>
+                <tr>
+                    <td><label>Phone Number:</label><input type="tel"></td>
+                </tr>
+                <tr>
+                    <td><label>Address:</label><textarea name="" id="" cols="30" rows="10"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label>State:</label> <input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Country:</label>
+                        <select>
+                            <option value="">Choose your country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="Russia">Russia</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Languages Known:</label>
+                        <input type="checkbox"> <label>English</label>
+                        <input type="checkbox"> <label>Kannada</label>
+                        <input type="checkbox"> <label>Hindi</label>
+                        <input type="checkbox"> <label>Telugu</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" /> Hereby I declare all the given details are true </td>
+                </tr>
+                <tr>
+                    <td> <button>Register</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
