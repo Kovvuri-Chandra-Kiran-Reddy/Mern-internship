@@ -1,0 +1,26 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  overflow-x: auto;
+}
+
+td,
+th {
+  padding: 5px;
+}
+
+table {
+  padding: 10px;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(54, 54, 86);
+}
