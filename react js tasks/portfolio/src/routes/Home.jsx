@@ -3,13 +3,13 @@ import Navbar from '../components/Navbar/Navbar'
 import Hero from '../components/Hero/Hero'
 import Footer from '../components/Footer/Footer'
 import Work from '../components/Work/Work'
-import DummyHero from './../components/DummyHero/DummyHero'
+import MainHero from './../components/MainHero/MainHero'
 const Home = () => {
   return (
     <div>
       <Navbar/>
       {/* <Hero/> */}
-      <DummyHero />
+      <MainHero />
       <Work/>
       <Footer/>
     </div>

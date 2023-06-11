@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTypewriter, Typewriter, Cursor } from 'react-simple-typewriter'
-import './DummyHero.css'
+import myImage from './../../assets/kiran photo.jpg'
+import './MainHero.css'
 
 const DummyHero = () => {
     const [text] = useTypewriter({
@@ -25,7 +26,7 @@ const DummyHero = () => {
             </div>
 
             <div className="right-hero">
-                <img src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_0.jpg" alt="" />
+                <img src={myImage} alt="" style={{width:"200px",height:"200px",borderRadius:250/2,marginRight:"20px"}}/>
             </div>
         </div>
 
