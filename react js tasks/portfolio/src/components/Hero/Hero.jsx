@@ -2,7 +2,7 @@ import './Hero.css'
 import React from 'react'
 import IntroImg from "./../../assets/intro-bg.jpg"
 import { Link } from 'react-router-dom'
-import Typewriter from "typewriter-effect";
+// import Typewriter from "typewriter-effect";
 
 const Hero = () => {
   return (

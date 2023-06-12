@@ -8,14 +8,14 @@ import Contact from './routes/ContactUs'
 
 const App = () => {
   return (
-    <>
+    <div style={{width:"100%"}}>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/projects" element={<Projects/>} />
         <Route path="/contact" element={<Contact/>} />
       </Routes>
-    </>
+    </div>
   )
 }
 
