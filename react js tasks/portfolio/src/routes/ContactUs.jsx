@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
-import HeroCom from '../components/HeroCom/HeroCom'
 import Form from './../components/Form/Form'
 
 const ContactUs = () => {

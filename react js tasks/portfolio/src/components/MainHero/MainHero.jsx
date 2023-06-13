@@ -26,7 +26,7 @@ const MainHero = () => {
             </div>
 
             <div className="right-hero">
-                <img src={myImage} alt="" style={{ width: "200px", height: "200px", borderRadius: 250 / 2, marginRight: "20px" }} />
+                <img src={myImage} alt="" style={{ width: "250px", height: "250px", borderRadius: 300 / 2, marginRight: "20px" }} />
             </div>
         </div>
     )
