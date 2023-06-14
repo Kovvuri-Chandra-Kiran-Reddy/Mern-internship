@@ -25,7 +25,7 @@ const SkillsData = [
     },
     {
         name : "Front End Development",
-        perc : "95%"
+        perc : "90%"
     },
     {
         name : "Computer Networks",
