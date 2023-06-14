@@ -1,0 +1,152 @@
+.cc{
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 0 auto;
+}
+
+@media (min-width : 768px) {
+    .cc{
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width : 992px) {
+    .cc{
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width : 1200px) {
+    .cc{
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width : 1400px) {
+    .cc{
+        max-width: 1350px;
+    }
+}
+
+.section-title h2{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.5;
+    text-transform: capitalize;
+    color : white;
+}
+
+.section-title.center{
+    text-align: center;
+}
+
+
+.skills-section{
+    padding-top: 35px;
+    position: relative;
+}
+ 
+@media screen and (max-width : 740px) {
+    .skills-section{
+        padding-top: 200px;
+    }
+}
+
+.skills-section .skill-items{
+    margin-top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.skill-item{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 48%;
+    flex:  0 0 48%;
+    max-width: 45%;
+}
+
+
+.skill-info{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.skill-info p{
+    font: 600;
+    font-size: 16px ;
+    line-height: 22px;
+    color : cyan;
+    opacity: 1;
+    -webkit-animation: showText 0.5s 1s linear forwards;
+    animation: showText 0.5s 1s linear forwards;
+}
+
+.progress-line{
+    margin-top: 7px;
+    height: 10px;
+    width: 100%;
+    background-color: #cdcdcd;
+    border-radius: 50px;
+    position: relative;
+}
+
+
+.progress-line span{
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    -webkit-animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    height: 100%;
+    border-radius: 50px;
+    position: absolute;
+    background-color: rgb(233, 157, 14);
+    transition: 1s all;
+}
+
+.progress-line span.animate{
+    -webkit-animation: animate 1.5s 0.5s cubic-bezier(1,0,0.5,1) forwards;
+    animation: animate 1.5s 0.5s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+@-webkit-keyframes showText{
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes showText{
+    100%{
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes animate{
+    100%{
+       -webkit-transform: scaleX(1);
+       transform: scaleX(1);
+    }
+}
+
+@keyframes animate{
+    100%{
+       -webkit-transform: scaleX(1);
+       transform: scaleX(1);
+    }
+}
