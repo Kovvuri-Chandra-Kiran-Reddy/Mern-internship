@@ -41,7 +41,7 @@ ul{
 }
 
 .btn:hover{
-  background: rgba(255,255,255,0.2);
-  color : blue;
+  background: magenta;
+  color : yellow;
   transition: 0.3s;
 }
