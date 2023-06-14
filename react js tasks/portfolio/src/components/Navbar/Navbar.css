@@ -49,6 +49,7 @@
     transform: scale(0.9);
     transition: .3s ease-in-out tranform;
     text-align: center;
+    z-index: 5;
 }
 
 .scroll-top:hover {
