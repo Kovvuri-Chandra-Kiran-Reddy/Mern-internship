@@ -9,7 +9,7 @@ const AboutContent = () => {
         <div className='about'>
             <div className="left">
                 <h1>Who Am I</h1>
-                <p>I always excited to learn new technologies related to any background. I am strongly motivated, fast learner, hardworker.i always gives my complete effort towards the work.</p>
+                <p>Hello 👋, my name is Chandra Kiran Reddy. I am a computer science student. I am a front end developer with great passion for website design. I have been working on the front end for some time, have also created some projects which you can see on my GitHub and will continue to do so. Apart from front end skills, I also know some programming languages like c, c++, python and java. A lot of work has also been done on machine learning and some projects have also been created. But right now my focus is on the front end because these skills give me the freedom to make anything new and innovative so that I can find a solution of any problem.</p>
                 <Link to="/contact">
                     <button className="btn">Contact</button>
                 </Link>

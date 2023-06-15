@@ -8,39 +8,39 @@
     height: 100%;
 }
 
-.about .left{
+.about .left {
     text-align: center;
     margin: auto;
     color: green;
-    padding: 4rem 0 2rem 0;
+    padding: 4rem 0 0 0;
     max-width: 750px;
 }
 
-.about .left p{
+.about .left p {
     margin: 1.2rem 0;
 }
 
-.right .image-container{
+.right .image-container {
     display: grid;
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: repeat(12, 1fr);
     position: relative;
     align-items: center;
     text-align: center;
 }
 
-.right .img{
+.right .img {
     max-width: 90%;
     border: 1px solid #333;
 }
 
-.right .top{
+.right .top {
     grid-column: 1/span 8;
     grid-row: 1;
-    padding-top: 20%;
+    padding-top: 10%;
     z-index: 6;
 }
 
-.right .bottom{
+.right .bottom {
     grid-column: 4/-1;
     grid-row: 1;
     z-index: 5;
